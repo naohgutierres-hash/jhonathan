@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Feliz 1 mes 💖</title>
+  <style>
+    :root{
+      --bg: #0f172a;
+      --card: #0b1220;
+      --accent: #ff6b6b;
+      --text: #f8fafc;
+    }
+    body {
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255,107,107,0.12), transparent 10%),
+        linear-gradient(180deg, #061024 0%, #0b1220 100%);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 10px 40px rgba(2,6,23,0.7);
+      max-width: 900px;
+      width: 94%;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2.4rem;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+    p.lead {
+      text-align: center;
+      margin: 10px 0 20px;
+      color: rgba(248,250,252,0.85);
+    }
+    .heart {
+      margin: 18px auto 24px;
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #ff9a9a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 30px rgba(255,107,107,0.12);
+      transform: scale(0);
+      animation: pop .7s cubic-bezier(.2,.9,.3,1) .2s forwards;
+    }
+    .heart:after {
+      content: '❤';
+      font-size: 42px;
+      filter: drop-shadow(0 6px 18px rgba(255,107,107,0.16));
+    }
+    @keyframes pop { to { transform: scale(1); } }
+    .btn {
+      display: inline-block;
+      margin: 0 auto;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.08);
+      cursor: pointer;
+      color: var(--text);
+    }
+    .center { display: flex; flex-direction: column; align-items: center; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .card-item {
+      background: var(--card);
+      padding: 10px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px;
+    }
+    .thumb {
+      width: 100%;
+      height: 120px;
+      background: #061124;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    .text-over {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      color: var(--text);
+      text-align: center;
+      opacity: 0;
+      transform: translateY(8px);
+      animation: fadeInText .7s forwards .9s;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(8px);
+      animation: fadeIn .7s forwards .5s;
+    }
+    @keyframes fadeIn { to { opacity: 1; transform: none; } }
+    @keyframes fadeInText { to { opacity: 1; transform: none; } }
+    footer {
+      margin-top: 18px;
+      text-align: center;
+      color: rgba(248,250,252,0.6);
+      font-size: 0.85rem;
+    }
+    .music {
+      margin-top: 20px;
+      text-align:center;
+    }
+    iframe {
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="center">
+      <div class="heart" aria-hidden="true"></div>
+      <h1>¡Feliz 1 mes!</h1>
+      <p class="lead">Un mes lleno de momentos que ya son eternos en mi corazón.</p>
+      <button id="showBtn" class="btn">Ver nuestra sorpresa</button>
+    </div>
+
+    <div id="surprise" class="reveal" style="display: none">
+      <div style="margin-top: 14px; text-align: center">
+        <p style="font-weight: 600; font-size:1.2rem">Lo nuestro apenas empieza ✨</p>
+        <p style="margin: 6px 0 0; color: rgba(248,250,252,0.75)">
+          Te dedico estas palabras que nacen de canciones que parecen hablarnos a nosotros. 💖
+        </p>
+      </div>
+
+      <div class="gallery">
+        <div class="card-item">
+          <div class="thumb">
+            <img data-src="https://m.media-amazon.com/images/I/61x1ZpXK7kL._AC_SL1500_.jpg" alt="Taekook 1">
+          </div>
+          <div class="text-over">
+            “Eres la historia más bonita que el destino escribió en mi vida.”
+          </div>
+        </div>
+
+        <div class="card-item">
+          <div class="thumb">
+            <img data-src="https://img.etimg.com/thumb/msid-120863728,width-500,height-500,imgsize-0,overlay-etpanache/photo.jpg" alt="Taekook 2">
+          </div>
+          <div class="text-over">
+            “Si el mundo se apaga, mientras tú estés, siempre habrá luz para mí.”
+          </div>
+        </div>
+
+        <div class="card-item">
+          <div class="thumb">
+            <img data-src="https://static.toiimg.com/photo/75634.jpg" alt="Taekook 3">
+          </div>
+          <div class="text-over">
+            “Tu voz se volvió mi canción favorita, y tu risa la melodía que no quiero dejar de escuchar.”
+          </div>
+        </div>
+
+        <div class="card-item">
+          <div class="thumb">
+            <img data-src="https://www.gmanetwork.com/photos/62974.jpg" alt="Taekook 4">
+          </div>
+          <div class="text-over">
+            “No necesito nada más… porque encontrarte fue como escuchar por fin la canción perfecta.”
+          </div>
+        </div>
+      </div>
+
+      <div class="music">
+        <p>🎶 Nuestra canción especial</p>
+        <iframe width="100%" height="180" src="https://www.youtube.com/embed/98Akpf1ph2o?autoplay=1&loop=1&playlist=98Akpf1ph2o" 
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <footer>Con todo mi cariño 💖</footer>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('showBtn').addEventListener('click', function(){
+      document.getElementById('surprise').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('surprise').style.opacity = 1;
+      }, 20);
+      document.querySelectorAll('.thumb img').forEach(img => {
+        const src = img.getAttribute('data-src');
+        if (src) {
+          img.src = src;
+          img.onload = () => { img.style.opacity = 1; }
+        }
+      });
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
